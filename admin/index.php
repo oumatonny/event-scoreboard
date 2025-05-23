@@ -1,7 +1,7 @@
 <?php 
 require_once '../includes/functions.php';
 
-// Handle form submissions
+// Handling form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['add_judge'])) {
         $username = trim($_POST['username']);

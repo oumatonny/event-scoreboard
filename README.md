@@ -11,6 +11,14 @@ A professional event scoreboard system built with PHP, MySQL, HTML, CSS, and Jav
 
 Live [http://oumatonny-event-scoreboard.42web.io/](http://oumatonny-event-scoreboard.42web.io/ "http://oumatonny-event-scoreboard.42web.io/")
 
+![1747992063230](image/README/1747992063230.png)
+
+![1747992106341](image/README/1747992106341.png)
+
+![1747992159179](image/README/1747992159179.png)
+
+![1747992179858](image/README/1747992179858.png)
+
 ## Features
 
 - Admin panel for judge management

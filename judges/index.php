@@ -4,7 +4,7 @@ require_once '../includes/functions.php';
 // Simulate judge login (in a real app, this would be proper authentication)
 $judgeId = isset($_GET['judge_id']) ? (int)$_GET['judge_id'] : 1;
 
-// Handle score submission
+// Handling score submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_score'])) {
     $userId = (int)$_POST['user_id'];
     $points = (int)$_POST['points'];

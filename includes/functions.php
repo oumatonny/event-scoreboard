@@ -1,21 +1,21 @@
 <?php
 require_once 'db.php';
 
-// Get all users
+// Geting all users
 function getAllUsers() {
     global $pdo;
     $stmt = $pdo->query("SELECT * FROM users ORDER BY name");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Get all judges
+// Geting all judges
 function getAllJudges() {
     global $pdo;
     $stmt = $pdo->query("SELECT * FROM judges ORDER BY display_name");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Add new judge
+// Adding new judge
 function addJudge($username, $displayName, $password, $isAdmin = false) {
     global $pdo;
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
@@ -23,14 +23,14 @@ function addJudge($username, $displayName, $password, $isAdmin = false) {
     return $stmt->execute([$username, $displayName, $passwordHash, $isAdmin]);
 }
 
-// Add score for user from judge
+// Adding score for user from judge
 function addScore($judgeId, $userId, $points) {
     global $pdo;
     $stmt = $pdo->prepare("INSERT INTO scores (judge_id, user_id, points) VALUES (?, ?, ?)");
     return $stmt->execute([$judgeId, $userId, $points]);
 }
 
-// Get scoreboard data
+// Getting scoreboard data
 function getScoreboard() {
     global $pdo;
     $sql = "SELECT u.id, u.name, COALESCE(SUM(s.points), 0) AS total_points
@@ -42,7 +42,7 @@ function getScoreboard() {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Get scores by judge
+// Getting scores by judge
 function getScoresByJudge($judgeId) {
     global $pdo;
     $stmt = $pdo->prepare("SELECT user_id, points FROM scores WHERE judge_id = ?");
@@ -50,14 +50,14 @@ function getScoresByJudge($judgeId) {
     return $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 }
 
-// Get total number of scores
+// Getting total number of scores
 function getTotalScores() {
     global $pdo;
     $stmt = $pdo->query("SELECT COUNT(*) FROM scores");
     return $stmt->fetchColumn();
 }
 
-// Display recent activity
+// Displaying recent activity
 function displayRecentActivity() {
     global $pdo;
     $sql = "SELECT j.display_name AS judge, u.name AS participant, s.points, s.created_at
