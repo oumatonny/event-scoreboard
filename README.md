@@ -9,7 +9,7 @@ By Tonny Ouma
 A professional event scoreboard system built with PHP, MySQL, HTML, CSS, and JavaScript.
 
 
-Live [oumatonny-event-scoreboard.42web.io ](oumatonny-event-scoreboard.42web.io "oumatonny-event-scoreboard.42web.io")
+Live [http://oumatonny-event-scoreboard.42web.io/](http://oumatonny-event-scoreboard.42web.io/ "http://oumatonny-event-scoreboard.42web.io/")
 
 ## Features
 
